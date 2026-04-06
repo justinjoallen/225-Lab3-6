@@ -48,8 +48,8 @@ pipeline {
                 script {
                     sh """
                     export KUBECONFIG=${KUBECONFIG}
-                    sed -i 's|${DOCKER_IMAGE}:latest|${DOCKER_IMAGE}:${IMAGE_TAG}|' deployment-dev.yaml
-                    kubectl apply -f deployment-dev.yaml
+                    sed -i 's|${DOCKER_IMAGE}:latest|${DOCKER_IMAGE}:${IMAGE_TAG}|' deployment-prod.yaml
+                    kubectl apply -f deployment-prod.yaml
                     """
                 }
             }
